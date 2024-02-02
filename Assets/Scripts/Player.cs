@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -45,10 +44,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
-        height = transform.position.y + 2.1f;
-        HeightText.text = "Height: " + height.ToString("0.0");
-        velocityText.text = "Velocity: " + rb.velocity.y.ToString("0.0");
+        cam.transform.position = new(transform.position.x, transform.position.y, cam.transform.position.z);
+        Ui();
+
         /*        if (rb.angularVelocity > maxRotationSpeed)
                 {
                     rb.angularVelocity = maxRotationSpeed;
@@ -71,6 +69,7 @@ public class Player : MonoBehaviour
         {
             rb.AddTorque(rotationSpeed);
         }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -78,7 +77,7 @@ public class Player : MonoBehaviour
         {
             if (transform.localEulerAngles.z < 0 + maxNotDeathAngle || transform.localEulerAngles.z > 360 - maxNotDeathAngle)
             {
-                throw new NotImplementedException();
+                // not implemented yet
             }
             else
             {
@@ -96,5 +95,12 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    //own methods
+    private void Ui()
+    {
+        height = transform.position.y + 2.1f;
+        HeightText.text = "Height: " + height.ToString("0.0");
+        velocityText.text = "Velocity: " + rb.velocity.y.ToString("0.0");
+        // todo: flips text
+    }
 }
