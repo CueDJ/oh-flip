@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     // cached references
 
     private Rigidbody2D rb;
-    private Camera cam;
 
 
     // serialized fields for jumping physics
@@ -40,14 +39,12 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
 
     }
 
 
     private void Update()
     {
-        cam.transform.position = new(transform.position.x, transform.position.y, cam.transform.position.z);
         Ui(); // updates the UI
         Rotation(); // Does all checks for rotation
     }
