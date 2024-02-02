@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 1391781399}
   - component: {fileID: 1391781398}
   m_Layer: 5
-  m_Name: Velocity (1)
+  m_Name: Flips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,14 +1892,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379e7d794eb111141915c1f6b46cd16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 5
-  jumpSpeedMultiplier: 1
+  jumpSpeed: 20
+  jumpSpeedMultiplier: 2
   Rotated: 0
   rotationSpeed: -30
   maxRotationSpeed: 120
   maxNotDeathAngle: 20
+  countFlips: 0
   HeightText: {fileID: 1328471785}
   velocityText: {fileID: 1369335950}
+  flipsText: {fileID: 1391781398}
 --- !u!1 &2017778618
 GameObject:
   m_ObjectHideFlags: 0

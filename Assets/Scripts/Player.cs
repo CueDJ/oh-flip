@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +21,7 @@ public class Player : MonoBehaviour
     [Tooltip("This is the speed at which the player rotates")][SerializeField] private float rotationSpeed = 5f;
     [Tooltip("This is the maximum speed at which the player can rotate")][SerializeField] private float maxRotationSpeed = 120f;
     [Tooltip("This sets the max angle of attack when hitting the trampoline. Default: 20")][SerializeField] private float maxNotDeathAngle = 20;
+    [SerializeField] private int countFlips = 0;
 
 
 
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI HeightText;
     [SerializeField] private TextMeshProUGUI velocityText;
+    [SerializeField] private TextMeshProUGUI flipsText;
 
     // extra fields
     private float height;
@@ -47,31 +48,12 @@ public class Player : MonoBehaviour
     private void Update()
     {
         cam.transform.position = new(transform.position.x, transform.position.y, cam.transform.position.z);
-        Ui();
-
-        /*        if (rb.angularVelocity > maxRotationSpeed)
-                {
-                    rb.angularVelocity = maxRotationSpeed;
-                }*/
-        /// Summary for above commented code: Could be used for front flips.
-        if (rb.angularVelocity < -maxRotationSpeed)
-        {
-            rb.angularVelocity = -maxRotationSpeed;
-        }
-        if (rb.rotation < -360)
-        {
-            Rotated = true;
-        }
-
-
+        Ui(); // updates the UI
+        Rotation(); // Does all checks for rotation
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rb.AddTorque(rotationSpeed);
-        }
-
+        if (Input.GetKey(KeyCode.Space)) rb.AddTorque(rotationSpeed);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -88,6 +70,7 @@ public class Player : MonoBehaviour
             }
             if (Rotated)
             {
+
                 rb.rotation = 0;
                 Rotated = false;
                 jumpSpeed += jumpSpeedMultiplier;
@@ -103,6 +86,26 @@ public class Player : MonoBehaviour
         height = transform.position.y + 2.1f;
         HeightText.text = "Height: " + height.ToString("0.0");
         velocityText.text = "Velocity: " + rb.velocity.y.ToString("0.0");
-        // todo: flips text
+        countFlips = ((int)(rb.rotation / 360));
+        countFlips *= -1;
+
+        flipsText.text = "Flips: " + countFlips.ToString("0");
+    }
+    private void Rotation()
+    {
+        /*        if (rb.angularVelocity > maxRotationSpeed)
+        {
+            rb.angularVelocity = maxRotationSpeed;
+        }*/
+        /// Summary for above commented code: Could be used for front flips.
+        if (rb.angularVelocity < -maxRotationSpeed)
+        {
+            rb.angularVelocity = -maxRotationSpeed;
+        }
+        if (rb.rotation < -360)
+        {
+            Rotated = true;
+        }
+
     }
 }
