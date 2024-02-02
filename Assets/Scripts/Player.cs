@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     [Tooltip("This checks if there has been atleast 1 full rotation")][SerializeField] private bool Rotated = false;
     [Tooltip("This is the speed at which the player rotates")][SerializeField] private float rotationSpeed = 5f;
     [Tooltip("This is the maximum speed at which the player can rotate")][SerializeField] private float maxRotationSpeed = 120f;
+    [Tooltip("This sets the max angle of attack when hitting the trampoline. Default: 20")][SerializeField] private float maxNotDeathAngle = 20;
 
 
 
@@ -58,7 +60,6 @@ public class Player : MonoBehaviour
         }
 
 
-
     }
     private void FixedUpdate()
     {
@@ -71,6 +72,15 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "trampoline")
         {
+            if (transform.localEulerAngles.z < 0 + maxNotDeathAngle || transform.localEulerAngles.z > 360 - maxNotDeathAngle)
+            {
+                throw new NotImplementedException();
+            }
+            else
+            {
+                Debug.Log("died");
+                Destroy(gameObject);
+            }
             if (Rotated)
             {
                 rb.rotation = 0;
