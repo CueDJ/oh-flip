@@ -5,15 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // cached references
+
     private Rigidbody2D rb;
     private Camera cam;
 
 
     // serialized fields for jumping physics
+    [Header("Jumping Physics")]
     [Tooltip("This is the speed at which the player jumps")][SerializeField] private float jumpSpeed = 5f;
     [Tooltip("This is the amount of speed added to the jump speed after each jump")][SerializeField] private float jumpSpeedMultiplier = 1f;
 
     // serialized fields for rotation physics
+    [Header("Rotation Physics")]
     [Tooltip("This checks if there has been atleast 1 full rotation")][SerializeField] private bool Rotated = false;
     [Tooltip("This is the speed at which the player rotates")][SerializeField] private float rotationSpeed = 5f;
     [Tooltip("This is the maximum speed at which the player can rotate")][SerializeField] private float maxRotationSpeed = 120f;
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
 
 
     // serialized fields for UI
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI HeightText;
     [SerializeField] private TextMeshProUGUI velocityText;
 
