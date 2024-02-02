@@ -1,5 +1,7 @@
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -82,7 +84,7 @@ public class Player : MonoBehaviour
             else
             {
                 Debug.Log("died");
-                Destroy(gameObject);
+                SceneManager.LoadScene(0);
             }
             if (Rotated)
             {
