@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,12 +13,12 @@ public class Buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-   public void Restet()
+    public void Restet()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }

@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
             else
             {
                 Debug.Log("died");
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
             if (Rotated)
             {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
                 Rotated = false;
                 jumpSpeed += jumpSpeedMultiplier * countFlips;
             }
-
+            transform.position = new(0, transform.position.y, 0);
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
         }
     }
