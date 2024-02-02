@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
                 rb.rotation = 0;
                 Rotated = false;
-                jumpSpeed += jumpSpeedMultiplier;
+                jumpSpeed += jumpSpeedMultiplier * countFlips;
             }
             transform.position = new(0, transform.position.y, 0);
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
