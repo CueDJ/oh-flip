@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // cached references
     private Rigidbody2D rb;
