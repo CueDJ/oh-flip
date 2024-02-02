@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 39891426}
   - component: {fileID: 39891425}
   - component: {fileID: 39891424}
-  - component: {fileID: 39891427}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -216,6 +215,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &39891427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   playerpos: {fileID: 0}
+=======
+>>>>>>> parent of 06fc1bb (cloud and bakcground change)
 --- !u!1 &302871994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379e7d794eb111141915c1f6b46cd16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 200
+  jumpSpeed: 5
   jumpSpeedMultiplier: 1
   Rotated: 0
   rotationSpeed: -30
@@ -1540,6 +1542,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1001 &5949672432152240432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1597,6 +1600,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc5c4129c227054b97d3c6d8a61f30d, type: 3}
+=======
+>>>>>>> parent of 06fc1bb (cloud and bakcground change)
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1607,4 +1612,7 @@ SceneRoots:
   - {fileID: 1985321201}
   - {fileID: 1971628884}
   - {fileID: 1860855593}
+<<<<<<< HEAD
   - {fileID: 5949672432152240432}
+=======
+>>>>>>> parent of 06fc1bb (cloud and bakcground change)

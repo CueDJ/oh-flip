@@ -45,31 +45,16 @@ public class Player : MonoBehaviour
     private void Update()
     {
         cam.transform.position = new(transform.position.x, transform.position.y, cam.transform.position.z);
-        Ui();
+        Ui(); // updates the UI
+        Rotation(); // Does all checks for rotation
 
-        /*        if (rb.angularVelocity > maxRotationSpeed)
-                {
-                    rb.angularVelocity = maxRotationSpeed;
-                }*/
-        /// Summary for above commented code: Could be used for front flips.
-        if (rb.angularVelocity < -maxRotationSpeed)
-        {
-            rb.angularVelocity = -maxRotationSpeed;
-        }
-        if (rb.rotation < -360)
-        {
-            Rotated = true;
-        }
+
 
 
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rb.AddTorque(rotationSpeed);
-        }
-
+        if (Input.GetKey(KeyCode.Space)) rb.AddTorque(rotationSpeed);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -102,5 +87,21 @@ public class Player : MonoBehaviour
         HeightText.text = "Height: " + height.ToString("0.0");
         velocityText.text = "Velocity: " + rb.velocity.y.ToString("0.0");
         // todo: flips text
+    }
+    private void Rotation()
+    {
+        /*        if (rb.angularVelocity > maxRotationSpeed)
+        {
+            rb.angularVelocity = maxRotationSpeed;
+        }*/
+        /// Summary for above commented code: Could be used for front flips.
+        if (rb.angularVelocity < -maxRotationSpeed)
+        {
+            rb.angularVelocity = -maxRotationSpeed;
+        }
+        if (rb.rotation < -360)
+        {
+            Rotated = true;
+        }
     }
 }
