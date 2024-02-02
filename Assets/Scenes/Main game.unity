@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 302871995}
   - component: {fileID: 302871998}
   - component: {fileID: 302871997}
+  - component: {fileID: 302871999}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -373,6 +374,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &302871999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302871994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26190fdc0652339418e2c33f45404e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &422267449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,8 +1576,8 @@ MonoBehaviour:
   musicSource: {fileID: 506763228}
   SFXSource: {fileID: 422267450}
   background: {fileID: 8300000, guid: 01501542c1fbcbc4e99ad36720dd70a2, type: 3}
-  Jumpingsound: {fileID: 8300000, guid: 0e836f3ec98e5174e9f574639669b61b, type: 3}
-  Deathsound: {fileID: 8300000, guid: a09430a5ddba4f040a9b23cda4c3f96e, type: 3}
+  JumpingSoundEffect: {fileID: 8300000, guid: 0e836f3ec98e5174e9f574639669b61b, type: 3}
+  DeathSoundEffect: {fileID: 8300000, guid: a09430a5ddba4f040a9b23cda4c3f96e, type: 3}
 --- !u!4 &1971269511
 Transform:
   m_ObjectHideFlags: 0
@@ -1910,6 +1923,7 @@ GameObject:
   - component: {fileID: 2038463608}
   - component: {fileID: 2038463609}
   - component: {fileID: 2038463610}
+  - component: {fileID: 2038463611}
   m_Layer: 0
   m_Name: top
   m_TagString: trampoline
@@ -2029,6 +2043,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2038463611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038463607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd7f7121d6a25a4bb28889c799ae63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
