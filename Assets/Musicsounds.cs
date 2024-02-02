@@ -8,13 +8,14 @@ public class Musicsounds : MonoBehaviour
 
     [Header("audio clip")]
     public AudioClip background;
-    public AudioClip Jumpingsound;
-    public AudioClip Deathsound;
+    public AudioClip JumpingSoundEffect;
+    public AudioClip DeathSoundEffect;
 
     private void Start()
     {
         musicSource.clip = background;
         musicSource.Play();
     }
+
 
 }
